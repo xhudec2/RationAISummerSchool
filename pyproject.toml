@@ -10,15 +10,18 @@ dependencies = [
 ]
 
 [tool.pdm.dev-dependencies]
-dev = ["mypy", "ruff"]
+dev = ["mypy", "pre-commit", "ruff"]
 
 [tool.pdm.scripts]
-train = "python -m mnist.train"
-tune = "python -m mnist.tune"
+train = "python -m src.train"
 l = { composite = ["lint", "format", "mypy"] }
 lint = "ruff check"
 format = "ruff format"
 mypy = "mypy ."
+post_install = { composite = [
+    "pre-commit install",
+    "pre-commit install --hook-type commit-msg",
+] }
 
 [tool.pdm]
 distribution = false
