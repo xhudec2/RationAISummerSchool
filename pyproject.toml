@@ -1,0 +1,22 @@
+[project]
+name = ""
+version = "0.1.0"
+authors = []
+requires-python = ">=3.11"
+readme = "README.md"
+license = { file = "LICENSE" }
+dependencies = []
+
+[tool.pdm.dev-dependencies]
+dev = ["mypy", "ruff"]
+
+[tool.pdm.scripts]
+train = "python -m mnist.train"
+tune = "python -m mnist.tune"
+l = { composite = ["lint", "format", "mypy"] }
+lint = "ruff check"
+format = "ruff format"
+mypy = "mypy ."
+
+[tool.pdm]
+distribution = false
