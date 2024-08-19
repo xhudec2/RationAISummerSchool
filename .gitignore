@@ -103,7 +103,7 @@ ipython_config.py
 
 # pdm
 #   Similar to Pipfile.lock, it is generally recommended to include pdm.lock in version control.
-# pdm.lock
+#pdm.lock
 #   pdm stores project-wide configurations in .pdm.toml, but it is recommended to not include it
 #   in version control.
 #   https://pdm-project.org/#use-with-ide
@@ -138,7 +138,7 @@ venv.bak/
 .ropeproject
 
 # mkdocs documentation
-/site
+site
 
 # mypy
 .mypy_cache/
@@ -166,6 +166,10 @@ cython_debug/
 # Mlflow
 mlruns/
 mlflow_store/
+mlflow_artifacts/
+
+# Pytorch Lightning
+lightning_logs/
 
 # PyCharm
 #  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
@@ -174,12 +178,5 @@ mlflow_store/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 .idea/
 
-# Ray
-/ray_results
-
-# Hydra
-/outputs
-
 # Project
 /data
-/models

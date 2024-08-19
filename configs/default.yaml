@@ -1,0 +1,20 @@
+defaults:
+  - hydra: default
+  - logger: mlflow
+  - _self_
+
+seed: ${random_seed:}
+mode: ???
+checkpoint: null
+
+trainer: {}
+
+data: {}
+
+model: {}
+
+metadata:
+  user: ???
+  experiment_name: ???
+  run_name: ???
+  description: ???
