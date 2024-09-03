@@ -8,7 +8,7 @@ license = { file = "LICENSE" }
 dependencies = [
     "torch>=2.4.0",
     "lightning>=2.4.0",
-    "rationai-mlkit @ git+ssh://git@gitlab.ics.muni.cz/rationai/digital-pathology/libraries/mlkit.git",
+    "rationai-mlkit @ git+https://gitlab.ics.muni.cz/rationai/digital-pathology/libraries/mlkit.git",
 ]
 
 [tool.pdm.dev-dependencies]
