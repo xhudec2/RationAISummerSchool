@@ -7,7 +7,11 @@ class BinaryClassifier(nn.Module):
         self.classifier = nn.Sequential(
             nn.Flatten(),
             nn.Dropout(p=0.5),
-            nn.Linear(512, 1),
+            nn.Linear(512, 1024),
+            nn.ReLU(),
+            nn.Linear(1024, 256),
+            nn.ReLU(),
+            nn.Linear(256, 1),
             nn.Sigmoid(),
         )
 
