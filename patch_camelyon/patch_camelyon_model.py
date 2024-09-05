@@ -78,4 +78,4 @@ class PatchCamelyonModel(LightningModule):
             metric.reset()
 
     def configure_optimizers(self) -> Optimizer:
-        return AdamW(self.parameters())
+        return AdamW(self.parameters(), lr=1e-4)
