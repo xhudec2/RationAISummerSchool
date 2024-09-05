@@ -3,19 +3,29 @@ from collections import defaultdict
 import torch
 from lightning import LightningModule
 from torch import Tensor, nn
+from torch.nn import BCELoss
+from torch.optim import AdamW
 from torch.optim.optimizer import Optimizer
+from torchmetrics.classification import BinaryF1Score, BinaryPrecision, BinaryRecall
 
-from project_name.typing import Input, Outputs
+from patch_camelyon.modeling.decoder_head import BinaryClassifier
+from patch_camelyon.typing import Input, Outputs
 
 
-class ProjectNameModel(LightningModule):
-    def __init__(self, backbone: nn.Module, decode_head: nn.Module) -> None:
+class PatchCamelyonModel(LightningModule):
+    def __init__(self, backbone: nn.Module) -> None:
         super().__init__()
         self.backbone = backbone
-        self.decode_head = decode_head
-        self.criterion = ...  # TODO add your loss function
+        self.decode_head = BinaryClassifier()
+        self.criterion = BCELoss()
 
-        self.metrics = nn.ModuleDict({...})  # TODO add metrics you want to compute
+        self.metrics = nn.ModuleDict(
+            {
+                "precision": BinaryPrecision(),
+                "recall": BinaryRecall(),
+                "f1": BinaryF1Score(),
+            }
+        )
 
         self._validation_step_outputs: dict[str, list[Tensor]] = defaultdict(list)
 
@@ -68,5 +78,4 @@ class ProjectNameModel(LightningModule):
             metric.reset()
 
     def configure_optimizers(self) -> Optimizer:
-        # TODO add your optimizer
-        ...
+        return AdamW(self.parameters())
