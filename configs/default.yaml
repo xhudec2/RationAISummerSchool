@@ -28,6 +28,7 @@ data:
 model: {}
 
 metadata:
-  experiment_name: Patch Camelyon
+  user: xhudec2
+  experiment_name: Testing Patch Camelyon
   run_name: Patch Camelyon training
   description: Training a model on the Patch Camelyon dataset
