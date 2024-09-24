@@ -1,4 +1,5 @@
 _target_: rationai.mlkit.lightning.loggers.MLFlowLogger
+tracking_uri: http://mlflow.rationai-mlflow:5000/
 experiment_name: ${metadata.experiment_name}
 run_name: ${metadata.run_name}
 tags:
