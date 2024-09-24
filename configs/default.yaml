@@ -27,6 +27,9 @@ data:
 
 model: {}
 
+mlflow:
+  tracking_uri: http://mlflow.rationai-mlflow:5000/
+
 metadata:
   user: xhudec2
   experiment_name: Testing Patch Camelyon
