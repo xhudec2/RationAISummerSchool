@@ -1,0 +1,20 @@
+defaults:
+  - background: drive
+  - save: mlflow_standalone_run
+
+title: Example local report
+
+background:
+  _target_: report.masks.DriveMasksRetriever
+  dir_name: /mnt/data/Projects/IKEM/ulcerative_colitis_test_cohort/tiff/
+  layer_name: Ulcerative colotis
+
+save:
+  artifact_path: report.html
+  metadata:
+    experiment_name: Testing
+    run_name: test report drive
+    description: Test IKEM report
+
+metrics_run_ids:
+- b46868a11ca84c64b3c7da08abae2a21
