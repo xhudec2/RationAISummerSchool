@@ -32,6 +32,6 @@ mlflow:
 
 metadata:
   user: xhudec2
-  experiment_name: Testing Patch Camelyon
+  experiment_name: Testing
   run_name: Patch Camelyon training
   description: Training a model on the Patch Camelyon dataset
